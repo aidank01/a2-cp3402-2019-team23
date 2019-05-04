@@ -14,15 +14,6 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-        <div class="footer-social-nav">
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'social',
-            'menu_id' => 'social-menu',
-        ));
-        ?>
-        </div>
-
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'emscustomtheme' ) ); ?>">
 				<?php
@@ -36,6 +27,7 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'emscustomtheme' ), 'emscustomtheme', '<a href="http://underscores.me/">Emerson Baria</a>' );
 				?>
 		</div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
