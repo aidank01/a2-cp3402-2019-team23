@@ -163,7 +163,7 @@ sup {
 /* Embedded content
 	 ========================================================================== */
 /**
- * Remove the border on images inside links in IE 10.
+ * Remove the border on css inside links in IE 10.
  */
 img {
   border-style: none; }
@@ -424,6 +424,8 @@ html {
   box-sizing: inherit; }
 
 body {
+  margin: 0;
+  padding: 0;
   background: #fff;
   /* Fallback for when there is no custom background color defined. */ }
 
@@ -548,12 +550,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+  color: white;
   text-decoration: none; }
   a:visited {
-    color: purple; }
+    color: white; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: yellow; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -562,43 +564,54 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation ul {
-  display: flex;
-  justify-content: space-between; }
+.menu {
+  width: 100%; }
 
 .main-navigation {
   clear: both;
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1em; }
+  width: 50%; }
   .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0; }
-    .main-navigation ul ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999; }
-      .main-navigation ul ul ul {
-        left: -999em;
+    list-style: none; }
+    .main-navigation ul li {
+      float: right; }
+      .main-navigation ul li ul {
+        background-color: #6b3704;
+        width: fit-content;
+        padding: 0 1em;
+        margin: 1em;
         top: 0; }
+        .main-navigation ul li ul a {
+          width: 200px;
+          text-justify: auto;
+          margin: 1px; }
+        .main-navigation ul li ul li {
+          list-style: none;
+          margin: 0;
+          padding: 0; }
+          .main-navigation ul li ul li ul {
+            margin: 0;
+            padding: 0; }
+            .main-navigation ul li ul li ul li {
+              width: fit-content;
+              margin: 0;
+              padding: 0; }
+              .main-navigation ul li ul li ul li a {
+                top: 2em;
+                display: block; }
+          .main-navigation ul li ul li a {
+            display: block; }
+    .main-navigation ul ul {
+      position: absolute;
+      left: -999em; }
+      .main-navigation ul ul ul {
+        left: -999em; }
       .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
         left: 100%; }
-      .main-navigation ul ul a {
-        width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
-    float: left;
     position: relative; }
-  .main-navigation a {
-    display: block;
-    text-decoration: none; }
 
 /* Small menu. */
 .menu-toggle,
@@ -714,13 +727,40 @@ a {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-area {
+  display: flex;
+  overflow: auto;
+  justify-content: space-evenly;
+  background-color: #6b3704;
+  width: 100%;
+  padding: 1em; }
+
 .widget {
-  margin: 0 0 1.5em;
-  display: -ms-grid;
-  grid-gap: 1em;
-  /* Make sure select elements fit in widgets. */ }
-  .widget select {
-    max-width: 100%; }
+  font-size: .8em;
+  color: white;
+  margin: 0 .5em;
+  display: inline-block;
+  vertical-align: top;
+  background-color: transparent;
+  width: 20%;
+  padding: .5em; }
+  .widget .widget-title {
+    font-size: 1em;
+    font-weight: bold; }
+  .widget ul {
+    font-size: .8em;
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 0;
+    margin: 0;
+    float: none;
+    list-style: none; }
+
+.search-form {
+  margin-right: 1em; }
+  .search-form .search-field {
+    display: block;
+    position: relative;
+    width: 100%; }
 
 /*--------------------------------------------------------------
 # Content
@@ -728,10 +768,15 @@ a {
 /*--------------------------------------------------------------
 ## Global layouts
 --------------------------------------------------------------*/
-.content-area, .widget-area {
+.content-area {
   width: 80%;
   margin: 0 auto;
   background-color: transparent; }
+
+.site {
+  margin: 0;
+  padding: 0;
+  width: 100%; }
 
 /*--------------------------------------------------------------
 ## Header
@@ -752,20 +797,23 @@ a {
 .site-header {
   background-color: #6b3704;
   color: white;
-  height: 6em;
+  height: fit-content;
   padding: 1em;
   position: sticky;
   z-index: 4;
   top: 0;
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  align-content: end; }
   @media screen and (min-width: 600px) {
     .site-header {
       padding: 1em 2em; } }
 
 .site-branding {
   min-height: 65px;
-  display: flex; }
+  display: flex;
+  width: 50%; }
 
 .custom-logo-link {
   margin: 0 1em; }
@@ -806,7 +854,41 @@ a {
     width: 7px; } }
 @media screen and (min-width: 600px) {
   .custom-logo-link {
-    display: none; } }
+    display: none; }
+
+  .main-navigation {
+    width: 100%;
+    margin-top: 1em; } }
+.menu {
+  width: 100%; }
+  .menu ul {
+    justify-content: space-between; }
+    .menu ul li {
+      margin: 0 .5em; }
+
+.social-nav-bar {
+  height: fit-content;
+  display: inline-block;
+  font-size: .8em;
+  padding: 0;
+  margin: 0;
+  background-color: #6b3704;
+  -webkit-border-radius: 0 0 0 2em;
+  -moz-border-radius: 0 0 0 2em;
+  border-radius: 0 0 0 2em;
+  position: fixed;
+  z-index: 5;
+  right: 0; }
+  .social-nav-bar ul {
+    list-style: none; }
+    .social-nav-bar ul li {
+      display: inline-block;
+      margin: 1em; }
+      .social-nav-bar ul li a {
+        display: block; }
+  .social-nav-bar .menu {
+    margin: 0; }
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -816,7 +898,7 @@ a {
 .post,
 .page {
   margin: 1.5em 0;
-  background-color: antiquewhite;
+  background-color: #f1f1f1;
   padding: 1em;
   width: 100%;
   border-radius: .5em; }
@@ -841,6 +923,11 @@ a {
   font-size: 1rem;
   font-style: italic; }
 
+.entry-header, .entry-footer {
+  color: #404040; }
+  .entry-header a, .entry-footer a {
+    color: #404040; }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -849,6 +936,26 @@ a {
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  height: fit-content;
+  display: inline-block;
+  font-size: .8em;
+  padding: 0;
+  margin: 0;
+  background-color: #6b3704;
+  width: 100%;
+  text-align: right; }
+  .site-footer ul {
+    list-style: none; }
+    .site-footer ul li {
+      display: inline-block;
+      margin: 1em; }
+      .site-footer ul li a {
+        display: block; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

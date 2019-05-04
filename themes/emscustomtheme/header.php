@@ -22,6 +22,15 @@
 
 <body <?php body_class(); ?>>
 
+<div class="social-nav-bar">
+    <?php
+    wp_nav_menu(array(
+        'theme_location' => 'social',
+        'menu_id' => 'social-menu',
+    ));
+    ?>
+</div>
+
 <!--    header image-->
 <?php if (get_header_image() && is_front_page()) : ?>
     <div class="site-header-image">
@@ -74,6 +83,7 @@
                 'menu_id' => 'primary-menu',
             ));
             ?>
+
         </nav><!-- #site-navigation -->
     </header><!-- #masthead -->
 

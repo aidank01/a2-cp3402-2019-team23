@@ -14,6 +14,15 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+        <div class="footer-social-nav">
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'social',
+            'menu_id' => 'social-menu',
+        ));
+        ?>
+        </div>
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'emscustomtheme' ) ); ?>">
 				<?php

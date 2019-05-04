@@ -33,6 +33,12 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+
+        <section class="single-side-bar">
+            <?php
+            get_sidebar();
+            ?>
+        </section>
 	</div><!-- #primary -->
 
 <?php
