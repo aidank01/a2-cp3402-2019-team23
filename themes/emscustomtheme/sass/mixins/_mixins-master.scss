@@ -48,3 +48,8 @@
 	margin: 0;
 	background-color: $color__background-coffee;
 }
+
+@mixin no-padding-margin{
+	margin: 0;
+	padding:0;
+}

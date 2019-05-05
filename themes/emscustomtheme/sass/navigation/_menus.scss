@@ -4,7 +4,7 @@
 
 .main-navigation {
 	clear: both;
-	width: 50%;
+	width: 60%;
 	ul{
 
 		list-style: none;
@@ -17,9 +17,12 @@
 				margin: 1em;
 				top: 0;
 				a{
-					width: 200px;
-					text-justify: auto;
-					margin: 1px;
+					width: fit-content;
+					text-justify: distribute;
+					margin: 0;
+					padding: .5em;
+					border-top: 1px solid gray;
+					background: $color__background-coffee;
 				}
 				li{
 					ul{
@@ -29,10 +32,10 @@
 							width: fit-content;
 							margin: 0;
 							padding: 0;
-							a {
-								top: 2em;
-								display: block;
-							}
+							//a {
+							//	top: 3em;
+							//	display: block;
+							//}
 
 						}
 					}
@@ -104,7 +107,6 @@
 		display: block;
 	}
 }
-
 .comment-navigation,
 .posts-navigation,
 .post-navigation {

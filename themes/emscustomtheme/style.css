@@ -569,7 +569,7 @@ a {
 
 .main-navigation {
   clear: both;
-  width: 50%; }
+  width: 60%; }
   .main-navigation ul {
     list-style: none; }
     .main-navigation ul li {
@@ -581,9 +581,12 @@ a {
         margin: 1em;
         top: 0; }
         .main-navigation ul li ul a {
-          width: 200px;
-          text-justify: auto;
-          margin: 1px; }
+          width: fit-content;
+          text-justify: distribute;
+          margin: 0;
+          padding: .5em;
+          border-top: 1px solid gray;
+          background: #6b3704; }
         .main-navigation ul li ul li {
           list-style: none;
           margin: 0;
@@ -595,9 +598,6 @@ a {
               width: fit-content;
               margin: 0;
               padding: 0; }
-              .main-navigation ul li ul li ul li a {
-                top: 2em;
-                display: block; }
           .main-navigation ul li ul li a {
             display: block; }
     .main-navigation ul ul {
@@ -784,6 +784,36 @@ a {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.menu {
+  width: 100%; }
+  .menu ul {
+    justify-content: space-between; }
+    .menu ul li {
+      margin: 0 .5em; }
+
+.social-nav-bar {
+  height: fit-content;
+  display: inline-block;
+  font-size: .8em;
+  padding: 0;
+  margin: 0;
+  background-color: #6b3704;
+  -webkit-border-radius: 0 0 0 2em;
+  -moz-border-radius: 0 0 0 2em;
+  border-radius: 0 0 0 2em;
+  position: fixed;
+  z-index: 5;
+  right: 0; }
+  .social-nav-bar ul {
+    list-style: none; }
+    .social-nav-bar ul li {
+      display: inline-block;
+      margin: 1em; }
+      .social-nav-bar ul li a {
+        display: block; }
+  .social-nav-bar .menu {
+    margin: 0; }
+
 .header-image {
   max-height: 60vh;
   overflow: hidden;
@@ -816,7 +846,7 @@ a {
 .site-branding {
   min-height: 65px;
   display: flex;
-  width: 50%; }
+  width: 40%; }
 
 .custom-logo-link {
   margin: 0 1em; }
@@ -842,56 +872,39 @@ a {
   height: 1em;
   font-style: italic; }
 
-@media screen and (min-width: 900px) {
-  .site-header, .site-footer {
-    display: flex; }
-
-  .site-branding {
-    width: 50%; }
-
-  .main.navigation {
-    width: 50%; }
-
-  .site-logo-link {
-    height: 7px;
-    width: 7px; } }
-@media screen and (min-width: 600px) {
-  .custom-logo-link {
-    display: none; }
+@media screen and (min-width: 320px) and (max-width: 900px) {
+  .menu-toggle {
+    display: none;
+    margin-top: 1em; }
 
   .main-navigation {
     width: 100%;
-    margin-top: 1em; } }
-.menu {
-  width: 100%; }
-  .menu ul {
-    justify-content: space-between; }
-    .menu ul li {
-      margin: 0 .5em; }
+    float: left;
+    justify-content: center; }
+    .main-navigation ul {
+      width: 100vw;
+      justify-content: center;
+      margin: 0;
+      padding: 0; }
+      .main-navigation ul li {
+        display: inline;
+        float: left;
+        left: 0; }
+        .main-navigation ul li a {
+          float: left;
+          text-align: left; }
 
-.social-nav-bar {
-  height: fit-content;
-  display: inline-block;
-  font-size: .8em;
-  padding: 0;
-  margin: 0;
-  background-color: #6b3704;
-  -webkit-border-radius: 0 0 0 2em;
-  -moz-border-radius: 0 0 0 2em;
-  border-radius: 0 0 0 2em;
-  position: fixed;
-  z-index: 5;
-  right: 0; }
-  .social-nav-bar ul {
-    list-style: none; }
+  .site-header, .site-footer {
+    display: block; }
+
+  .site-branding {
+    width: 100%; }
+
+  .social-nav-bar {
+    margin-top: 0;
+    top: 0; }
     .social-nav-bar ul li {
-      display: inline-block;
-      margin: 1em; }
-      .social-nav-bar ul li a {
-        display: block; }
-  .social-nav-bar .menu {
-    margin: 0; }
-
+      margin: .5em; } }
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
